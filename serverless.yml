@@ -157,6 +157,18 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  listCustomProblemsForCategory:
+    # Defines an HTTP API endpoint that calls the main function in custom-problems/list.js
+    # - path: url path is /user-custom-problems/{id}
+    # - method: GET request
+    handler: custom-problems/list.main
+    events:
+      - http:
+          path: user-custom-problems/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
   updateCustomProblem:
     # Defines an HTTP API endpoint that calls the main function in custom-problems/update.js
     # - path: url path is /user-custom-problem/{id}
@@ -216,6 +228,18 @@ functions:
     events:
       - http:
           path: user-custom-solutions
+          method: get
+          cors: true
+          authorizer: aws_iam
+
+  listCustomSolutionsForProblem:
+    # Defines an HTTP API endpoint that calls the main function in custom-solutions/list.js
+    # - path: url path is /user-custom-solutions/{id}
+    # - method: GET request
+    handler: custom-solutions/list.main
+    events:
+      - http:
+          path: user-custom-solutions/{id}
           method: get
           cors: true
           authorizer: aws_iam

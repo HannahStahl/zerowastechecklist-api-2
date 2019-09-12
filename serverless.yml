@@ -244,18 +244,6 @@ functions:
           cors: true
           authorizer: aws_iam
 
-  listCustomSolutionsForProblem:
-    # Defines an HTTP API endpoint that calls the main function in custom-solutions/list.js
-    # - path: url path is /user-custom-solutions/{id}
-    # - method: GET request
-    handler: custom-solutions/list.main
-    events:
-      - http:
-          path: user-custom-solutions/{id}
-          method: get
-          cors: true
-          authorizer: aws_iam
-
   updateCustomSolution:
     # Defines an HTTP API endpoint that calls the main function in custom-solutions/update.js
     # - path: url path is /user-custom-solution/{id}
